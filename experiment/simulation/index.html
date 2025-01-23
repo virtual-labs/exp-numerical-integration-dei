@@ -1,13 +1,383 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+    <meta charset="UTF-8">
+    <title>Numerical Integration Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f2f5;
+        }
+
+        .main-container {
+            width: 80%; /* Reduced from 95% */
+            max-width: 1000px; /* Reduced from 1400px */
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title-banner {
+            background-color: #2c3e50;
+            color: white;
+            padding: 12px 30px; /* Reduced padding */
+            text-align: center;
+            border-radius: 12px;
+            margin-top: 15px;
+            margin-bottom: 2px;
+            width: fit-content; /* Makes banner width fit content */
+            font-size: 22px; /* Slightly reduced */
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px; /* Reduced from 30px */
+            padding: 15px; /* Reduced from 20px */
+            width: 100%;
+        }
+
+        .input-box, .output-box {
+            background: #ffffff;
+            padding: 20px; /* Reduced from 25px */
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            min-height: 400px; /* Reduced from 550px */
+        }
+
+        .form-group {
+            margin-bottom: 15px; /* Reduced from 20px */
+        }
+
+        /* Rest of the styles remain the same */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .examples {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        button {
+            background: #2c3e50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
+        }
+
+        button:hover {
+            background: #2c3e50;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px; /* Reduced from 20px */
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 22px; /* Reduced from 24px */
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        h2 {
+            margin-bottom: 15px; /* Reduced from 20px */
+            color: #ffffff;
+            font-size: 18px; /* Reduced from 20px */
+            border-bottom: 1px solid #2c3e50;
+            padding-bottom: 8px;
+            padding: 10px 25px;
+            background: #2c3e50;
+        }
+
+        #error-message {
+            color: #dc3545;
+            margin-top: 10px;
+            display: none;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #ffe6e6;
+        }
+
+        .canvas-container {
+            background: white;
+            padding: 12px; /* Reduced from 15px */
+            border-radius: 8px;
+            margin-top: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 250px; /* Reduced from 300px */
+        }
+
+        #functionPlot {
+            flex-grow: 1;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+                width: 90%;
+            }
+            
+            .input-box, .output-box {
+                min-height: auto;
+            }
+
+            .main-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<!-- Rest of the HTML and JavaScript code remains exactly the same -->
+<body>
+    <div class="main-container">
+        <div class="title-banner">
+            Numerical Integration Methods Experiment
+        </div>
+        <div class="container">
+            <!-- Rest of the content remains exactly the same -->
+            <div class="input-box">
+                <h2><center>Input Parameters</h2>
+                <div class="form-group">
+                    <label for="function">Function f(x):</label>
+                    <input type="text" id="function" placeholder="Enter your function" value="x^2">
+                    <div class="examples">
+                        Examples:
+                        <br>• x^2 (square)
+                        <br>• sin(x) (sine)
+                        <br>• exp(x) (exponential)
+                        <br>• 2*x + 1 (linear)
+                        <br>• 1/x (reciprocal)
+                        <br>• sqrt(x) (square root)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lower">Lower Limit (a):</label>
+                    <input type="number" id="lower" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="upper">Upper Limit (b):</label>
+                    <input type="number" id="upper" value="1">
+                </div>
+                <div class="form-group">
+                    <label for="segments">Number of Segments:</label>
+                    <input type="number" id="segments" value="100" min="2">
+                </div>
+                <div class="form-group">
+                    <label for="method">Integration Method:</label>
+                    <select id="method">
+                        <option value="trapezoidal">Trapezoidal Rule</option>
+                        <option value="simpson">Simpson's Rule</option>
+                    </select>
+                </div>
+                <button onclick="calculate()">Simulate</button>
+                <div id="error-message"></div>
+            </div>
+            <div class="output-box">
+                <h2><center>Result</h2>
+                <div class="result" id="result"></div>
+                <div class="canvas-container">
+                    <canvas id="functionPlot"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // [Previous JavaScript code remains exactly the same]
+        let chart = null;
+
+        function trapezoidalRule(f, a, b, n) {
+            const h = (b - a) / n;
+            let sum = (f(a) + f(b)) / 2;
+            
+            for (let i = 1; i < n; i++) {
+                const x = a + i * h;
+                sum += f(x);
+            }
+            
+            return h * sum;
+        }
+
+        function simpsonsRule(f, a, b, n) {
+            if (n % 2 !== 0) n++;
+            const h = (b - a) / n;
+            let sum = f(a) + f(b);
+            
+            for (let i = 1; i < n; i++) {
+                const x = a + i * h;
+                sum += f(x) * (i % 2 === 0 ? 2 : 4);
+            }
+            
+            return (h / 3) * sum;
+        }
+
+        function calculate() {
+            try {
+                const functionString = document.getElementById('function').value;
+                const a = parseFloat(document.getElementById('lower').value);
+                const b = parseFloat(document.getElementById('upper').value);
+                const n = parseInt(document.getElementById('segments').value);
+                const method = document.getElementById('method').value;
+
+                const f = x => math.evaluate(functionString, { x: x });
+                const result = method === 'trapezoidal' 
+                    ? trapezoidalRule(f, a, b, n)
+                    : simpsonsRule(f, a, b, n);
+
+                document.getElementById('result').innerHTML = `∫ = ${result.toFixed(6)}`;
+                
+                plotFunction(f, a, b, n, result);
+                
+                document.getElementById('error-message').style.display = 'none';
+            } catch (error) {
+                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('error-message').textContent = 'Error: Invalid input. Please check your function and parameters.';
+            }
+        }
+
+        function plotFunction(f, a, b, n, integral) {
+            const points = 200;
+            const dx = (b - a) / points;
+            
+            const xValues = Array.from({length: points + 1}, (_, i) => a + i * dx);
+            const yValues = xValues.map(x => f(x));
+
+            const yMin = Math.min(...yValues);
+            const yMax = Math.max(...yValues);
+            const yRange = yMax - yMin;
+            const yPadding = yRange * 0.1;
+
+            const data = {
+                labels: xValues,
+                datasets: [{
+                    label: 'f(x)',
+                    data: xValues.map((x, i) => ({x: x, y: yValues[i]})),
+                    borderColor: '#007bff',
+                    borderWidth: 3,
+                    fill: true,
+                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                    tension: 0.4,
+                    pointRadius: 0
+                }]
+            };
+
+            const config = {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Function Plot',
+                            font: {
+                                size: 16,
+                                weight: 'bold'
+                            }
+                        },
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'x',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                color: '#e0e0e0'
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'f(x)',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            min: yMin - yPadding,
+                            max: yMax + yPadding,
+                            grid: {
+                                color: '#e0e0e0'
+                            }
+                        }
+                    }
+                }
+            };
+
+            if (chart) {
+                chart.destroy();
+            }
+            chart = new Chart(document.getElementById('functionPlot'), config);
+        }
+
+        // Initial calculation
+        calculate();
+
+        // Adjust chart height on window resize
+        window.addEventListener('resize', () => {
+            if (chart) {
+                calculate();
+            }
+        });
+    </script>
 </body>
 </html>
