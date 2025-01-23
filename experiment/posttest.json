@@ -2,35 +2,23 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "When is numerical integration preferred over analytical integration?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "When the function is linear",
+        "b": "ansWhen the exact integral cannot be calculatedwer2",
+        "c": "When the graph of the function is unknown",
+        "d": "When the function has no maximum value"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Which of the following is a limitation of the Trapezoidal Rule??",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "It is only applicable to linear functions",
+        "b": "It requires an even number of intervals",
+        "c": "It may be less accurate for curved functions",
+        "d": "It cannot handle large intervals"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
