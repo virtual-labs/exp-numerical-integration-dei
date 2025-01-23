@@ -1,0 +1,1 @@
+To find the Numerical integration using various methods such as Trapezoidal and Simpson’s methods.

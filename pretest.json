@@ -1,0 +1,28 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the primary purpose of numerical integration?",
+      "answers": {
+        "a": "To solve algebraic equations",
+        "b": "To approximate the area under a curve",
+        "c": "To differentiate a function",
+        "d": "To find the maximum value of a function"
+      },
+
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which method uses parabolic arcs for approximation?",
+      "answers": {
+        "a": "Trapezoidal Rule",
+        "b": "Midpoint Rule",
+        "c": "Simpson's Rule",
+        "d": "Rectangular Method"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}
