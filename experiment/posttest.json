@@ -5,23 +5,101 @@
       "question": "When is numerical integration preferred over analytical integration?",
       "answers": {
         "a": "When the function is linear",
-        "b": "ansWhen the exact integral cannot be calculatedwer2",
+        "b": "When the exact integral cannot be calculated",
         "c": "When the graph of the function is unknown",
         "d": "When the function has no maximum value"
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      "correctAnswer": "b"
     },
     {
-      "question": "Which of the following is a limitation of the Trapezoidal Rule??",
+      "question": "Which of the following is a limitation of the Trapezoidal Rule?",
       "answers": {
-        "a": "It is only applicable to linear functions",
-        "b": "It requires an even number of intervals",
-        "c": "It may be less accurate for curved functions",
-        "d": "It cannot handle large intervals"
+        "a": "It assumes straight line approximation between points",
+        "b": "It cannot be used for any curve",
+        "c": "It requires symbolic differentiation",
+        "d": "It makes the function discontinuous"
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
+    },
+    {
+      "question": "What does numerical integration physically represent?",
+      "answers": {
+        "a": "The slope of the function",
+        "b": "The area under the curve",
+        "c": "The maximum value of the function",
+        "d": "The number of intervals"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Simpson's methods generally provide:",
+      "answers": {
+        "a": "Lower accuracy than Trapezoidal Rule",
+        "b": "Higher accuracy using parabolic approximation",
+        "c": "Results only for straight lines",
+        "d": "No approximation at all"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Which parameter affects the accuracy of numerical integration?",
+      "answers": {
+        "a": "Number of segments",
+        "b": "Color of the graph",
+        "c": "Screen resolution",
+        "d": "None of these"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Increasing the number of segments generally leads to:",
+      "answers": {
+        "a": "Less accurate results",
+        "b": "More accurate results",
+        "c": "Same results always",
+        "d": "Undefined results"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Which method uses straight lines to approximate the area?",
+      "answers": {
+        "a": "Simpson’s 1/3 Rule",
+        "b": "Simpson’s 3/8 Rule",
+        "c": "Trapezoidal Rule",
+        "d": "Newton’s Method"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Simpson’s 1/3 Rule is based on:",
+      "answers": {
+        "a": "Cubic approximation",
+        "b": "Parabolic approximation",
+        "c": "Linear approximation",
+        "d": "Random estimation"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Numerical integration helps in solving:",
+      "answers": {
+        "a": "Functions that are difficult to integrate analytically",
+        "b": "Only polynomial functions",
+        "c": "Only trigonometric functions",
+        "d": "Only constant functions"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "In the simulator, shading under the curve visually represents:",
+      "answers": {
+        "a": "The derivative of the function",
+        "b": "The area being computed",
+        "c": "The slope of the curve",
+        "d": "The midpoint value"
+      },
+      "correctAnswer": "b"
     }
   ]
 }
