@@ -9,9 +9,7 @@
         "c": "To differentiate a function",
         "d": "To find the maximum value of a function"
       },
-
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      "correctAnswer": "b"
     },
     {
       "question": "Which method uses parabolic arcs for approximation?",
@@ -21,8 +19,87 @@
         "c": "Simpson's Rule",
         "d": "Rectangular Method"
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "c"
+    },
+    {
+      "question": "What does the Trapezoidal Rule assume between two points?",
+      "answers": {
+        "a": "A straight-line connection",
+        "b": "A curved connection",
+        "c": "A horizontal line",
+        "d": "A vertical connection"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Increasing the number of segments in numerical integration generally:",
+      "answers": {
+        "a": "Decreases accuracy",
+        "b": "Improves accuracy",
+        "c": "Has no effect",
+        "d": "Reverses the function"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Which of the following is considered more accurate for smooth curves?",
+      "answers": {
+        "a": "Rectangular Method",
+        "b": "Trapezoidal Rule",
+        "c": "Simpson’s Rule",
+        "d": "No method is accurate"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Numerical integration is required when:",
+      "answers": {
+        "a": "Exact integration is easy",
+        "b": "Only the derivative of the function is known",
+        "c": "The function cannot be integrated analytically",
+        "d": "Function is always constant"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "The shaded region under the curve in the simulator represents:",
+      "answers": {
+        "a": "Derivative",
+        "b": "Area approximated by integration",
+        "c": "Maximum function height",
+        "d": "Graph boundary"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Which input affects segmentation in numerical integration?",
+      "answers": {
+        "a": "Number of segments",
+        "b": "Color of the plot",
+        "c": "Font size",
+        "d": "Device brightness"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Simpson’s 1/3 Rule requires:",
+      "answers": {
+        "a": "An odd number of segments",
+        "b": "A prime number of segments",
+        "c": "An even number of segments",
+        "d": "A square number of segments"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Numerical integration helps in solving problems related to:",
+      "answers": {
+        "a": "Physics and engineering",
+        "b": "Chemistry only",
+        "c": "History and geography",
+        "d": "None of the above"
+      },
+      "correctAnswer": "a"
     }
   ]
 }
