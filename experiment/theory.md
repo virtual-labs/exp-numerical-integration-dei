@@ -1,15 +1,39 @@
-### Theory
+## Theory
 
-Numerical integration is a computational technique used to approximate the area under a curve when the exact integral is unknown or difficult to compute analytically. Instead of relying on symbolic calculus, the method uses discrete data points from a function and calculates the sum of small segment areas to estimate the total integral value.
+### Introduction
 
-In numerical integration, the interval between the lower and upper limits is divided into smaller segments. Each segment is then used to construct a simple geometric shape whose area can be calculated easily. Adding these small areas together provides an estimate of the region under the curve.
+Numerical integration is a computational technique used to approximate the definite integral of a function when an analytical solution is difficult or impossible to obtain. In many practical problems, especially in scientific experiments and numerical simulations, function values are available only at discrete points. Numerical integration enables the estimation of the area under a curve using these discrete data points.
 
-Two commonly used numerical integration methods include:
+### Principle of Numerical Integration
+The basic principle of numerical integration is to divide the interval of integration, from the lower limit 𝑎 to the upper limit 𝑏, into a finite number of smaller sub-intervals of equal width. If the interval is divided into 𝑛 sub-intervals, the step size ℎ is given by
 
-1. **Trapezoidal Rule**  
-   This method connects data points with straight lines, forming trapezoids. The total area is found by summing the areas of all trapezoids. It is simple to apply and works effectively for functions that do not vary rapidly.
+<img width="92" height="44" alt="image" src="https://github.com/user-attachments/assets/3512f263-1ea4-45ba-ad9f-83c42777cb57" />
 
-2. **Simpson’s Rule**  
-   This method uses parabolic curves to approximate the shape of the function between data points. By applying quadratic interpolation, Simpson’s Rule generally provides higher accuracy compared to the Trapezoidal Rule, especially for smooth and continuous functions.
+Over each sub-interval, the function is approximated using simple geometric shapes whose areas can be easily calculated. The total area under the curve is then obtained by summing the areas of these shapes.
 
-Numerical integration is widely used in physics, engineering, computer science, environmental analysis, and many other real-world applications where complex functions or experimental data make traditional calculus challenging. It enables precise estimation of quantities such as distance, energy, volume, and probability distributions, even when exact solutions are not feasible.
+### Trapezoidal Rule
+In the Trapezoidal Rule, the curve between two consecutive data points is approximated by a straight line, forming a trapezoid. The area under the curve is estimated by summing the areas of all trapezoids formed over the sub-intervals.
+
+The Trapezoidal Rule is mathematically expressed as:
+
+<img width="500" height="83" alt="image" src="https://github.com/user-attachments/assets/4948f325-4ce4-431e-b5ed-5f7e589b0dd7" />
+
+This method is simple to implement and provides good accuracy for functions that do not change rapidly over the integration interval.
+
+### Simpson’s Rule
+
+Simpson’s Rule improves upon the Trapezoidal Rule by approximating the function using parabolic curves instead of straight lines. This method requires the number of sub-intervals to be even and uses quadratic interpolation to estimate the area under the curve.
+
+The mathematical expression for Simpson’s Rule is:
+
+<img width="688" height="83" alt="image" src="https://github.com/user-attachments/assets/9ad623bd-2a6c-4d82-aee1-34001a500014" />
+
+Due to its higher-order approximation, Simpson’s Rule generally provides more accurate results for smooth and continuous functions.
+
+### Accuracy and Step Size Considerations
+The accuracy of numerical integration depends on the number of sub-intervals and the step size ℎ . A smaller step size generally leads to better accuracy but increases computational effort. Choosing an appropriate step size is therefore essential for reliable integration results.
+
+### Applications of Numerical Integration
+Numerical integration is widely used in physics, engineering, computer science, and environmental studies. Common applications include calculating displacement from velocity data, estimating work and energy, determining areas and volumes, and analyzing experimental and measured datasets where analytical integration is not feasible.
+
+
