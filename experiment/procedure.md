@@ -1,25 +1,25 @@
 ### Procedure
 
-1. **Enter the Function**
-   Select or type the desired mathematical function in the input box under “Function f(x)”.
+1. Open the simulation interface for the numerical integration experiment.
 
-2. **Set the Integration Limits**
-   Provide the lower limit (a) and upper limit (b) within which the area under the curve will be calculated.
+2. Enter the mathematical function to be integrated along with the lower and upper limits of integration.
 
-3. **Choose the Number of Segments**
-   Specify the number of segments to divide the interval into. A higher number of segments generally increases accuracy.
+3. Specify the number of sub-intervals or the step size to divide the integration range into evenly spaced intervals.
 
-4. **Select the Numerical Integration Method**
-   Choose between Trapezoidal Rule or Simpson’s Rule from the integration method dropdown menu.
+4. Select the numerical integration method from the available options:
 
-5. **Simulate the Integration**
-   Click on the “Simulate” button to compute the approximate integral value.
+- Trapezoidal Rule
 
-6. **View the Numerical Result**
-   The calculated value of the integral will be displayed on the right side under the “Result” section.
+- Simpson’s Rule
 
-7. **Analyze the Graph**
-   Observe the shaded region under the function plot to visually interpret the area being approximated.
+5. Click the Submit button to perform numerical integration using the selected method.
 
-8. **Compare Method Accuracy (Optional)**
-   Repeat the experiment using a different method or a different number of segments to analyze the change in accuracy.
+6. Observe the numerical value of the definite integral displayed as output.
+
+7. Compare the integral values obtained using the Trapezoidal Rule and Simpson’s Rule for the same function and interval.
+
+8. Analyze how the choice of method and the number of sub-intervals affect the accuracy of the numerical integration result.
+
+9. Repeat the experiment by varying the step size or number of sub-intervals to study convergence of the integral value.
+
+10. Record the observations and draw conclusions regarding the relative accuracy and efficiency of the Trapezoidal and Simpson’s methods.
