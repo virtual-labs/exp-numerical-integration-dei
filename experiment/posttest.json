@@ -5,99 +5,99 @@
       "question": "When is numerical integration preferred over analytical integration?",
       "answers": {
         "a": "When the function is linear",
-        "b": "When the exact integral cannot be calculated",
+        "b": "When the exact integral cannot be calculated analytically",
         "c": "When the graph of the function is unknown",
         "d": "When the function has no maximum value"
       },
       "correctAnswer": "b"
     },
     {
-      "question": "Which of the following is a limitation of the Trapezoidal Rule?",
+      "question": "Which of the following is a primary limitation of the Trapezoidal Rule?",
       "answers": {
-        "a": "It assumes straight line approximation between points",
-        "b": "It cannot be used for any curve",
+        "a": "It assumes linear approximation between consecutive data points",
+        "b": "It cannot be applied to curved functions",
         "c": "It requires symbolic differentiation",
-        "d": "It makes the function discontinuous"
+        "d": "It works only for polynomial functions"
       },
       "correctAnswer": "a"
     },
     {
-      "question": "What does numerical integration physically represent?",
+      "question": "Numerical integration geometrically represents:",
       "answers": {
         "a": "The slope of the function",
-        "b": "The area under the curve",
+        "b": "The accumulated area under the curve over an interval",
         "c": "The maximum value of the function",
-        "d": "The number of intervals"
+        "d": "The number of iterations"
       },
       "correctAnswer": "b"
     },
     {
-      "question": "Simpson's methods generally provide:",
+      "question": "Compared to the Trapezoidal Rule, Simpson’s 1/3 Rule generally provides:",
       "answers": {
-        "a": "Lower accuracy than Trapezoidal Rule",
-        "b": "Higher accuracy using parabolic approximation",
-        "c": "Results only for straight lines",
-        "d": "No approximation at all"
+        "a": "Lower accuracy",
+        "b": "Higher accuracy due to quadratic approximation",
+        "c": "Exact results for all functions",
+        "d": "Results only for straight lines"
       },
       "correctAnswer": "b"
     },
     {
-      "question": "Which parameter affects the accuracy of numerical integration?",
+      "question": "Which factor most directly affects the accuracy of numerical integration methods?",
       "answers": {
-        "a": "Number of segments",
-        "b": "Color of the graph",
-        "c": "Screen resolution",
-        "d": "None of these"
+        "a": "Number of subintervals used",
+        "b": "Color of the plotted graph",
+        "c": "Units of measurement",
+        "d": "Type of calculator used"
       },
       "correctAnswer": "a"
     },
     {
-      "question": "Increasing the number of segments generally leads to:",
+      "question": "As the number of subintervals increases in numerical integration, the approximation error generally:",
       "answers": {
-        "a": "Less accurate results",
-        "b": "More accurate results",
-        "c": "Same results always",
-        "d": "Undefined results"
+        "a": "Increases significantly",
+        "b": "Decreases",
+        "c": "Remains constant",
+        "d": "Becomes undefined"
       },
       "correctAnswer": "b"
     },
     {
-      "question": "Which method uses straight lines to approximate the area?",
+      "question": "Which numerical integration method approximates the integrand using straight line segments?",
       "answers": {
         "a": "Simpson’s 1/3 Rule",
         "b": "Simpson’s 3/8 Rule",
         "c": "Trapezoidal Rule",
-        "d": "Newton’s Method"
+        "d": "Gaussian Quadrature"
       },
       "correctAnswer": "c"
     },
     {
-      "question": "Simpson’s 1/3 Rule is based on:",
+      "question": "Simpson’s 1/3 Rule is based on approximating the function using:",
       "answers": {
-        "a": "Cubic approximation",
-        "b": "Parabolic approximation",
-        "c": "Linear approximation",
-        "d": "Random estimation"
+        "a": "A linear polynomial",
+        "b": "A quadratic (parabolic) polynomial",
+        "c": "A cubic polynomial",
+        "d": "Random sampling"
       },
       "correctAnswer": "b"
     },
     {
-      "question": "Numerical integration helps in solving:",
+      "question": "If the function is highly curved within the interval, which method is generally more accurate?",
       "answers": {
-        "a": "Functions that are difficult to integrate analytically",
-        "b": "Only polynomial functions",
-        "c": "Only trigonometric functions",
-        "d": "Only constant functions"
+        "a": "Trapezoidal Rule",
+        "b": "Simpson’s Rule",
+        "c": "Midpoint Rule only",
+        "d": "Left Riemann Sum"
       },
-      "correctAnswer": "a"
+      "correctAnswer": "b"
     },
     {
-      "question": "In the simulator, shading under the curve visually represents:",
+      "question": "In a numerical integration simulator, the shaded region under the curve visually represents:",
       "answers": {
         "a": "The derivative of the function",
-        "b": "The area being computed",
-        "c": "The slope of the curve",
-        "d": "The midpoint value"
+        "b": "The approximate value of the definite integral",
+        "c": "The slope at a point",
+        "d": "The midpoint of the interval"
       },
       "correctAnswer": "b"
     }
